@@ -1,0 +1,20 @@
+c:\users\bagyu\documents\visual studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.exe.config
+c:\users\bagyu\documents\visual studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.exe
+c:\users\bagyu\documents\visual studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.pdb
+c:\users\bagyu\documents\visual studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.csprojResolveAssemblyReference.cache
+c:\users\bagyu\documents\visual studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2._0.Properties.Resources.resources
+c:\users\bagyu\documents\visual studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.csproj.GenerateResource.Cache
+c:\users\bagyu\documents\visual studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.exe
+c:\users\bagyu\documents\visual studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.pdb
+C:\Users\bagyu\documents\visual studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2._0.frmPhotoBookMaster.resources
+C:\Users\bagyu\documents\visual studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2._0.frmHelp.resources
+C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.pdb
+C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.pdb
+C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.csprojResolveAssemblyReference.cache
+C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2._0.frmPhotoBookMaster.resources
+C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2._0.frmHelp.resources
+C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2._0.Properties.Resources.resources
+C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.csproj.GenerateResource.Cache
+C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.exe.config
+C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.exe
+C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.exe
