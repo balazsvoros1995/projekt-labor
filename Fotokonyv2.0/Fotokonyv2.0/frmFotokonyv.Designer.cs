@@ -75,6 +75,7 @@
             this.listViewFeltöltött.TabIndex = 0;
             this.listViewFeltöltött.UseCompatibleStateImageBehavior = false;
             this.listViewFeltöltött.Visible = false;
+            this.listViewFeltöltött.SelectedIndexChanged += new System.EventHandler(this.listViewFeltöltött_Click);
             // 
             // btnFeltölt
             // 
@@ -238,7 +239,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Fotokonyv2._0.Properties.Resources.balra;
-            this.pictureBox1.Location = new System.Drawing.Point(274, 376);
+            this.pictureBox1.Location = new System.Drawing.Point(277, 376);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

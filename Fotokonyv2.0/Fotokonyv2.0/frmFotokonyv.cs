@@ -16,6 +16,7 @@ namespace Fotokonyv2._0
         public frmPhotoBookMaster()
         {
             InitializeComponent();
+            init();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -85,12 +86,7 @@ namespace Fotokonyv2._0
                         btnUjOldal.Visible = false;
                     }
                     break;
-    
-
-            }
-
-           
-           
+            }         
         }
 
         //**Mentés gombra kattintás
@@ -117,34 +113,10 @@ namespace Fotokonyv2._0
            
         }
 
+        private Point firstPoint = new Point();
+
         private void populate()
         {
-            //ImageList imgs = new ImageList();
-            //imgs.ImageSize = new Size(80, 80);
-
-            //string[] paths = { };
-            //paths = Directory.GetFiles("C:/Users/bagyu/Pictures/foto");
-
-            //try
-            //{
-            //    foreach(String p in paths)
-            //    {
-            //        imgs.Images.Add(Image.FromFile(p));
-            //    }
-            //} catch(Exception e)
-            //{
-            //    MessageBox.Show(e.Message);
-            //}
-
-            //listViewFeltöltött.SmallImageList = imgs;
-            //ListViewItem item = new ListViewItem();
-            //listViewFeltöltött.Items.Add("white.jpg", 0);
-            ////listViewFeltöltött.Items.Add("black.jpg", 1);
-            ////listViewFeltöltött.Items.Add("red.jpg", 2);
-            ////listViewFeltöltött.Items.Add("blue.jpg", 3);
-            ////listViewFeltöltött.Items.Add("pink.jpg", 0);
-
-
             openFileDialogTallóz.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png";
             openFileDialogTallóz.Multiselect = true;
 
@@ -167,31 +139,61 @@ namespace Fotokonyv2._0
 
                 listViewFeltöltött.Items.Add(new ListViewItem("", imageListA.Images.Count-1));
                 this.imageListA.ImageSize = new Size(110, 110);
-            } 
+            }
+        }
 
+        public void init()
+        {
+            Panel moveObj = new Panel();
+            Point p = listViewFeltöltött.PointToClient(MousePosition);
+            //moveObj = listViewFeltöltött.HitTest(p);
+            pictureBox1.MouseDown += (ss, ee) =>
+            {
+                if (ee.Button == System.Windows.Forms.MouseButtons.Left) { firstPoint = Control.MousePosition; }
+            };
 
+            pictureBox1.MouseMove += (ss, ee) =>
+            {
+                if (ee.Button == System.Windows.Forms.MouseButtons.Left)
+                {
+                    Point temp = Control.MousePosition;
+                    Point res = new Point(firstPoint.X - temp.X, firstPoint.Y - temp.Y);
 
-            //DirectoryInfo dir = new DirectoryInfo(@"C:/Users/bagyu/Pictures/foto");
-            //foreach(FileInfo file in dir.GetFiles())
-            //{   
-            //    try
-            //    {
-            //        this.imageListA.Images.Add(Image.FromFile(file.FullName));
-            //    } catch
-            //    {
-            //        MessageBox.Show("Not image file");
-            //    }
-            //}
-            //this.listViewFeltöltött.View = View.LargeIcon;
-            //this.imageListA.ImageSize = new Size(90, 90);
-            //this.listViewFeltöltött.LargeImageList = this.imageListA;
+                    pictureBox1.Location = new Point(pictureBox1.Location.X - res.X, pictureBox1.Location.Y - res.Y);
 
-            //for(int j = 0; j < this.imageListA.Images.Count; j++)
-            //{
-            //    ListViewItem item = new ListViewItem();
-            //    item.ImageIndex = j;
-            //    this.listViewFeltöltött.Items.Add(item);
-            //}
+                    firstPoint = temp;
+                }
+            };
+        }
+
+        private void listViewFeltöltött_Click(object sender, EventArgs e)
+        {
+        //    foreach(ListViewItem lvi in listViewFeltöltött.SelectedItems)
+        //    {
+        //        if(lvi.Index > 0)
+        //        {
+        //            //MessageBox.Show("asd");
+        //            Panel moveObj = new Panel();
+        //            listViewFeltöltött.MouseDown += (ss, ee) =>
+        //            {
+        //                if (ee.Button == System.Windows.Forms.MouseButtons.Left) { firstPoint = Control.MousePosition; }
+        //            };
+
+        //            listViewFeltöltött.MouseMove += (ss, ee) =>
+        //            {
+        //                if (ee.Button == System.Windows.Forms.MouseButtons.Left)
+        //                {
+        //                    Point temp = Control.MousePosition;
+        //                    Point res = new Point(firstPoint.X - temp.X, firstPoint.Y - temp.Y);
+
+        //                    listViewFeltöltött.Location = new Point(listViewFeltöltött.Location.X - res.X, listViewFeltöltött.Location.Y - res.Y);
+
+        //                    firstPoint = temp;
+        //                }
+        //            };
+
+        //        }
+        //    }
         }
 
         //**Feltöltés gombra kattintás
@@ -296,9 +298,6 @@ namespace Fotokonyv2._0
                 btnUjOldal.Location = new Point(1175, 600);
                 btnUjOldal.Visible = true;
             }
-         
-
-            
         }
 
         private void frmPhotoBookMaster_Load(object sender, EventArgs e)
