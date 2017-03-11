@@ -18,13 +18,13 @@ C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Foto
 C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.exe.config
 C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.exe
 C:\Users\Vörös Balázs\Documents\Visual Studio 2015\Projects\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.exe
-C:\Users\bagyu\Desktop\Projekt labor\Program\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.exe.config
-C:\Users\bagyu\Desktop\Projekt labor\Program\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.exe
-C:\Users\bagyu\Desktop\Projekt labor\Program\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.pdb
-C:\Users\bagyu\Desktop\Projekt labor\Program\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.exe
-C:\Users\bagyu\Desktop\Projekt labor\Program\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.pdb
-C:\Users\bagyu\Desktop\Projekt labor\Program\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.csprojResolveAssemblyReference.cache
-C:\Users\bagyu\Desktop\Projekt labor\Program\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2._0.frmPhotoBookMaster.resources
-C:\Users\bagyu\Desktop\Projekt labor\Program\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2._0.frmHelp.resources
-C:\Users\bagyu\Desktop\Projekt labor\Program\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2._0.Properties.Resources.resources
-C:\Users\bagyu\Desktop\Projekt labor\Program\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.csproj.GenerateResource.Cache
+C:\Users\fanni\Documents\ProjektL\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.exe.config
+C:\Users\fanni\Documents\ProjektL\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.exe
+C:\Users\fanni\Documents\ProjektL\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.pdb
+C:\Users\fanni\Documents\ProjektL\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.exe
+C:\Users\fanni\Documents\ProjektL\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\bin\Debug\Fotokonyv2.0.pdb
+C:\Users\fanni\Documents\ProjektL\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.csprojResolveAssemblyReference.cache
+C:\Users\fanni\Documents\ProjektL\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2._0.frmPhotoBookMaster.resources
+C:\Users\fanni\Documents\ProjektL\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2._0.frmHelp.resources
+C:\Users\fanni\Documents\ProjektL\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2._0.Properties.Resources.resources
+C:\Users\fanni\Documents\ProjektL\projekt-labor\Fotokonyv2.0\Fotokonyv2.0\obj\Debug\Fotokonyv2.0.csproj.GenerateResource.Cache

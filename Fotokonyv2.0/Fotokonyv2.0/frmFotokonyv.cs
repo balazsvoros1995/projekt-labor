@@ -13,6 +13,8 @@ namespace Fotokonyv2._0
 {
     public partial class frmPhotoBookMaster : Form
     {
+        Image imgOriginal;
+
         public frmPhotoBookMaster()
         {
             InitializeComponent();
@@ -48,7 +50,6 @@ namespace Fotokonyv2._0
                     button1.Visible = true;
                     cimszoveg.Visible = false;
                     logo.Visible = false;
-
                     checkBox1.Checked = false;
                     checkBox2.Checked = false;
                     break;
@@ -217,13 +218,19 @@ namespace Fotokonyv2._0
         private void btnHatterKep_Click(object sender, EventArgs e)
         {
             openFileDialogTallóz.Filter = "(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png";
-            openFileDialogTallóz.Multiselect = true;
+            openFileDialogTallóz.Multiselect = false;
             pboxOldal1.BackColor = Color.White;
             pboxOldal2.BackColor = Color.White;
             if (openFileDialogTallóz.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 pboxOldal1.Load(openFileDialogTallóz.FileName);
+                imgOriginal = pboxOldal1.Image;
+
                 pboxOldal2.Load(openFileDialogTallóz.FileName);
+                if (pboxOldal1.Image != null)
+                {
+                    pboxOldal1.Image = Zoom2(imgOriginal);
+                }
             }
             
             
@@ -267,7 +274,6 @@ namespace Fotokonyv2._0
                 pboxOldal2.Size = new System.Drawing.Size(300, 320);
                 pboxOldal2.Location = new Point(656, 227);
                 pboxOldal2.Visible = true;
-
                 pictureBox1.Location = new Point(274, 376);
                 pictureBox2.Location = new Point(1000, 376);
                 pictureBox1.Visible = true;
@@ -305,5 +311,29 @@ namespace Fotokonyv2._0
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
         }
+        Image Zoom2(Image img)
+        {
+            Bitmap vmi = new Bitmap(img, 300, 320);
+            Graphics g = Graphics.FromImage(vmi);
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            return vmi;
+        }
+        Image Zoom(Image img, Size size)
+        {
+            Bitmap vmi = new Bitmap(img, 300 + (img.Width * size.Width / 100), 320 + (img.Height * size.Height / 100));
+            Graphics g = Graphics.FromImage(vmi);
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            return vmi;
+        }
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            if (trackBar1.Value >= 0)
+            {
+
+                pboxOldal1.Image = Zoom(imgOriginal, new Size(trackBar1.Value, trackBar1.Value));
+            }
+        }
+ 
+
     }
 }
