@@ -18,7 +18,7 @@ namespace Fotokonyv2._0
         public frmPhotoBookMaster()
         {
             InitializeComponent();
-            init();
+            //init();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -114,8 +114,7 @@ namespace Fotokonyv2._0
            
         }
 
-        private Point firstPoint = new Point();
-
+        //**Kép feltöltése
         private void populate()
         {
             openFileDialogTallóz.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png";
@@ -123,8 +122,10 @@ namespace Fotokonyv2._0
 
             if(openFileDialogTallóz.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
+                
                 string[] files = openFileDialogTallóz.FileNames;
-                foreach(var jpegFile in files)
+                
+                foreach (var jpegFile in files)
                 {
                     try
                     {
@@ -136,65 +137,71 @@ namespace Fotokonyv2._0
                     }
                     listViewFeltöltött.LargeImageList = imageListA;
                     listViewFeltöltött.Refresh();
+                    //MessageBox.Show(imageListA.Images.Count.ToString());
+                    listViewFeltöltött.Items.Add(new ListViewItem("", imageListA.Images.Count-1));
+                    this.imageListA.ImageSize = new Size(110, 110);
                 }
-
-                listViewFeltöltött.Items.Add(new ListViewItem("", imageListA.Images.Count-1));
-                this.imageListA.ImageSize = new Size(110, 110);
-            }
+                
+           }
         }
 
-        public void init()
-        {
-            Panel moveObj = new Panel();
-            Point p = listViewFeltöltött.PointToClient(MousePosition);
-            //moveObj = listViewFeltöltött.HitTest(p);
-            pictureBox1.MouseDown += (ss, ee) =>
-            {
-                if (ee.Button == System.Windows.Forms.MouseButtons.Left) { firstPoint = Control.MousePosition; }
-            };
-
-            pictureBox1.MouseMove += (ss, ee) =>
-            {
-                if (ee.Button == System.Windows.Forms.MouseButtons.Left)
-                {
-                    Point temp = Control.MousePosition;
-                    Point res = new Point(firstPoint.X - temp.X, firstPoint.Y - temp.Y);
-
-                    pictureBox1.Location = new Point(pictureBox1.Location.X - res.X, pictureBox1.Location.Y - res.Y);
-
-                    firstPoint = temp;
-                }
-            };
-        }
-
-        private void listViewFeltöltött_Click(object sender, EventArgs e)
-        {
-        //    foreach(ListViewItem lvi in listViewFeltöltött.SelectedItems)
+        //**Kép behúzása
+        //public void init()
+        //{
+        //    Panel moveObj = new Panel();
+        //    //Point p = listViewFeltöltött.PointToClient(MousePosition);
+        //    //moveObj = listViewFeltöltött.HitTest(p);
+        //    pictureBox1.MouseDown += (ss, ee) =>
         //    {
-        //        if(lvi.Index > 0)
+        //        if (ee.Button == System.Windows.Forms.MouseButtons.Left) { firstPoint = Control.MousePosition; }
+        //    };
+
+        //    pictureBox1.MouseMove += (ss, ee) =>
+        //    {
+        //        if (ee.Button == System.Windows.Forms.MouseButtons.Left)
         //        {
-        //            //MessageBox.Show("asd");
-        //            Panel moveObj = new Panel();
-        //            listViewFeltöltött.MouseDown += (ss, ee) =>
-        //            {
-        //                if (ee.Button == System.Windows.Forms.MouseButtons.Left) { firstPoint = Control.MousePosition; }
-        //            };
+        //            Point temp = Control.MousePosition;
+        //            Point res = new Point(firstPoint.X - temp.X, firstPoint.Y - temp.Y);
 
-        //            listViewFeltöltött.MouseMove += (ss, ee) =>
-        //            {
-        //                if (ee.Button == System.Windows.Forms.MouseButtons.Left)
-        //                {
-        //                    Point temp = Control.MousePosition;
-        //                    Point res = new Point(firstPoint.X - temp.X, firstPoint.Y - temp.Y);
+        //            pictureBox1.Location = new Point(pictureBox1.Location.X - res.X, pictureBox1.Location.Y - res.Y);
 
-        //                    listViewFeltöltött.Location = new Point(listViewFeltöltött.Location.X - res.X, listViewFeltöltött.Location.Y - res.Y);
-
-        //                    firstPoint = temp;
-        //                }
-        //            };
-
+        //            firstPoint = temp;
         //        }
-        //    }
+        //    };
+        //   // MessageBox.Show(listViewFeltöltött.it)
+        //}
+
+
+        private Point firstPoint = new Point();
+        //*Kép behúzása
+        private void listViewFeltöltött_ItemActivate(object sender, EventArgs e)
+        {
+            foreach (ListViewItem lvi in listViewFeltöltött.SelectedItems)
+            {
+                int imgIndex = lvi.ImageIndex;
+                pbox.Location = Control.MousePosition;
+                pbox.Visible = true;
+                pbox.Image = this.imageListA.Images[imgIndex];
+                pbox.Size = imageListA.ImageSize;
+                pbox.BringToFront();
+                pbox.MouseDown += (ss, ee) =>
+                {
+                    if (ee.Button == System.Windows.Forms.MouseButtons.Left) { firstPoint = Control.MousePosition; }
+                };
+
+                pbox.MouseMove += (ss, ee) =>
+                {
+                    if (ee.Button == System.Windows.Forms.MouseButtons.Left)
+                    {
+                        Point temp = Control.MousePosition;
+                        Point res = new Point(firstPoint.X - temp.X, firstPoint.Y - temp.Y);
+
+                        pbox.Location = new Point(pbox.Location.X - res.X, pbox.Location.Y - res.Y);
+
+                        firstPoint = temp;
+                    }
+                };
+            }
         }
 
         //**Feltöltés gombra kattintás
@@ -329,7 +336,6 @@ namespace Fotokonyv2._0
         {
             if (trackBar1.Value >= 0)
             {
-
                 pboxOldal1.Image = Zoom(imgOriginal, new Size(trackBar1.Value, trackBar1.Value));
             }
         }

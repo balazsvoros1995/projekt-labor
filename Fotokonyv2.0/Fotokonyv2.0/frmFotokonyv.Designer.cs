@@ -59,6 +59,7 @@
             this.cimszoveg = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.pbox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxOldal2)).BeginInit();
@@ -66,6 +67,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewFeltöltött
@@ -77,7 +79,7 @@
             this.listViewFeltöltött.TabIndex = 0;
             this.listViewFeltöltött.UseCompatibleStateImageBehavior = false;
             this.listViewFeltöltött.Visible = false;
-            this.listViewFeltöltött.SelectedIndexChanged += new System.EventHandler(this.listViewFeltöltött_Click);
+            this.listViewFeltöltött.SelectedIndexChanged += new System.EventHandler(this.listViewFeltöltött_ItemActivate);
             // 
             // btnFeltölt
             // 
@@ -314,7 +316,7 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(127, 47);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(55, 24);
+            this.checkBox2.Size = new System.Drawing.Size(39, 17);
             this.checkBox2.TabIndex = 1;
             this.checkBox2.Text = "A4";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -325,7 +327,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(22, 47);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(55, 24);
+            this.checkBox1.Size = new System.Drawing.Size(39, 17);
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "A5";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -337,7 +339,7 @@
             this.cimszoveg.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cimszoveg.Location = new System.Drawing.Point(414, 123);
             this.cimszoveg.Name = "cimszoveg";
-            this.cimszoveg.Size = new System.Drawing.Size(821, 108);
+            this.cimszoveg.Size = new System.Drawing.Size(559, 73);
             this.cimszoveg.TabIndex = 20;
             this.cimszoveg.Text = "PhotoBookMaster";
             // 
@@ -356,14 +358,23 @@
             this.trackBar1.Location = new System.Drawing.Point(681, 152);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(300, 69);
+            this.trackBar1.Size = new System.Drawing.Size(300, 45);
             this.trackBar1.TabIndex = 4;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // pbox
+            // 
+            this.pbox.Location = new System.Drawing.Point(277, 139);
+            this.pbox.Name = "pbox";
+            this.pbox.Size = new System.Drawing.Size(100, 50);
+            this.pbox.TabIndex = 22;
+            this.pbox.TabStop = false;
             // 
             // frmPhotoBookMaster
             // 
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.pbox);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.cimszoveg);
@@ -400,6 +411,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,6 +449,7 @@
         private System.Windows.Forms.Label cimszoveg;
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.PictureBox pbox;
     }
 }
 
