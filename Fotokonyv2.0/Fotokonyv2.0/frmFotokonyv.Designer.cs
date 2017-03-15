@@ -369,6 +369,7 @@
             this.pbox.Size = new System.Drawing.Size(100, 50);
             this.pbox.TabIndex = 22;
             this.pbox.TabStop = false;
+            this.pbox.Click += new System.EventHandler(this.pbox_KeyUp);
             // 
             // frmPhotoBookMaster
             // 
