@@ -53,12 +53,12 @@
             this.pboxOldal1 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnKepMeretOK = new System.Windows.Forms.Button();
+            this.checkBoxA4 = new System.Windows.Forms.CheckBox();
+            this.checkBoxA5 = new System.Windows.Forms.CheckBox();
             this.cimszoveg = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.trackBarZoom = new System.Windows.Forms.TrackBar();
             this.pbox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,7 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pboxOldal1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarZoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -271,6 +271,7 @@
             this.pboxOldal1.Location = new System.Drawing.Point(336, 227);
             this.pboxOldal1.Name = "pboxOldal1";
             this.pboxOldal1.Size = new System.Drawing.Size(300, 320);
+            this.pboxOldal1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxOldal1.TabIndex = 3;
             this.pboxOldal1.TabStop = false;
             this.pboxOldal1.Visible = false;
@@ -289,9 +290,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Khaki;
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.btnKepMeretOK);
+            this.groupBox1.Controls.Add(this.checkBoxA4);
+            this.groupBox1.Controls.Add(this.checkBoxA5);
             this.groupBox1.Location = new System.Drawing.Point(410, 123);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
@@ -300,44 +301,44 @@
             this.groupBox1.Text = "Lapméret választás";
             this.groupBox1.Visible = false;
             // 
-            // button1
+            // btnKepMeretOK
             // 
-            this.button1.Location = new System.Drawing.Point(60, 71);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnKepMeretOK.Location = new System.Drawing.Point(60, 71);
+            this.btnKepMeretOK.Name = "btnKepMeretOK";
+            this.btnKepMeretOK.Size = new System.Drawing.Size(75, 23);
+            this.btnKepMeretOK.TabIndex = 2;
+            this.btnKepMeretOK.Text = "OK";
+            this.btnKepMeretOK.UseVisualStyleBackColor = true;
+            this.btnKepMeretOK.Visible = false;
+            this.btnKepMeretOK.Click += new System.EventHandler(this.btnKepMeretOK_Click);
             // 
-            // checkBox2
+            // checkBoxA4
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(127, 47);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(39, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "A4";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.Visible = false;
+            this.checkBoxA4.AutoSize = true;
+            this.checkBoxA4.Location = new System.Drawing.Point(127, 47);
+            this.checkBoxA4.Name = "checkBoxA4";
+            this.checkBoxA4.Size = new System.Drawing.Size(39, 17);
+            this.checkBoxA4.TabIndex = 1;
+            this.checkBoxA4.Text = "A4";
+            this.checkBoxA4.UseVisualStyleBackColor = true;
+            this.checkBoxA4.Visible = false;
             // 
-            // checkBox1
+            // checkBoxA5
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(22, 47);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(39, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "A5";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Visible = false;
+            this.checkBoxA5.AutoSize = true;
+            this.checkBoxA5.Location = new System.Drawing.Point(22, 47);
+            this.checkBoxA5.Name = "checkBoxA5";
+            this.checkBoxA5.Size = new System.Drawing.Size(39, 17);
+            this.checkBoxA5.TabIndex = 0;
+            this.checkBoxA5.Text = "A5";
+            this.checkBoxA5.UseVisualStyleBackColor = true;
+            this.checkBoxA5.Visible = false;
             // 
             // cimszoveg
             // 
             this.cimszoveg.AutoSize = true;
             this.cimszoveg.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cimszoveg.Location = new System.Drawing.Point(414, 123);
+            this.cimszoveg.Location = new System.Drawing.Point(416, 147);
             this.cimszoveg.Name = "cimszoveg";
             this.cimszoveg.Size = new System.Drawing.Size(559, 73);
             this.cimszoveg.TabIndex = 20;
@@ -353,14 +354,14 @@
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
             // 
-            // trackBar1
+            // trackBarZoom
             // 
-            this.trackBar1.Location = new System.Drawing.Point(681, 152);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(300, 45);
-            this.trackBar1.TabIndex = 4;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.trackBarZoom.Location = new System.Drawing.Point(681, 152);
+            this.trackBarZoom.Maximum = 100;
+            this.trackBarZoom.Name = "trackBarZoom";
+            this.trackBarZoom.Size = new System.Drawing.Size(300, 45);
+            this.trackBarZoom.TabIndex = 4;
+            this.trackBarZoom.Scroll += new System.EventHandler(this.trackBarZoom_Scroll);
             // 
             // pbox
             // 
@@ -376,7 +377,7 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.pbox);
-            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.trackBarZoom);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.cimszoveg);
             this.Controls.Add(this.groupBox1);
@@ -400,7 +401,6 @@
             this.Controls.Add(this.btnHatter);
             this.Controls.Add(this.listViewFeltöltött);
             this.Name = "frmPhotoBookMaster";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "PhotobookMaster";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPhotoBookMaster_Load);
@@ -411,7 +411,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarZoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -419,8 +419,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.ImageList imageListAlbum;
-        private System.Windows.Forms.ListView listViewAlbum;
+        //private System.Windows.Forms.ImageList imageListAlbum;
+        //private System.Windows.Forms.ListView listViewAlbum;
         private System.Windows.Forms.ListView listViewFeltöltött;
         private System.Windows.Forms.Button btnFeltölt;
         private System.Windows.Forms.Button btnHatter;
@@ -444,12 +444,12 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnKepMeretOK;
+        private System.Windows.Forms.CheckBox checkBoxA4;
+        private System.Windows.Forms.CheckBox checkBoxA5;
         private System.Windows.Forms.Label cimszoveg;
         private System.Windows.Forms.PictureBox logo;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar trackBarZoom;
         private System.Windows.Forms.PictureBox pbox;
     }
 }
