@@ -57,7 +57,6 @@ namespace Fotokonyv2._0
                     logo.Visible = false;
                     checkBoxA5.Checked = false;
                     checkBoxA4.Checked = false;
-                    pbox.Visible = false;
                     break;
                 default:
                     DialogResult confirm = MessageBox.Show("Biztosan új fotókönyvet akarsz nyitni?", "Új fotókönyv", MessageBoxButtons.YesNo);
@@ -92,6 +91,8 @@ namespace Fotokonyv2._0
                         btnUjOldal.Visible = false;
 
                         pbox.Visible = false;
+
+                        Controls.Remove(pb);
                     }
                     break;
             }         
@@ -319,6 +320,7 @@ namespace Fotokonyv2._0
         }
 
         int kepekSzama = 0;
+        PictureBox pb = new PictureBox();
         private void pbox_KeyUp(object sender, EventArgs e)
         {
             if(pbox.Location.X + pbox.Width > pboxOldal1.Location.X && pbox.Location.Y + pbox.Width > pboxOldal1.Location.Y &&
@@ -326,7 +328,7 @@ namespace Fotokonyv2._0
                 pbox.Location.Y < pboxOldal1.Location.Y + pboxOldal1.Size.Height)
             {
 
-                PictureBox pb = new PictureBox
+                pb = new PictureBox
                 {
                     Location = pbox.Location,
                     Image = pbox.Image,
@@ -349,7 +351,7 @@ namespace Fotokonyv2._0
                 pbox.Location.X < pboxOldal2.Location.X + pboxOldal2.Size.Width &&
                 pbox.Location.Y < pboxOldal2.Location.Y + pboxOldal2.Size.Height)
             {
-                PictureBox pb = new PictureBox
+                pb = new PictureBox
                 {
                     Location = pbox.Location,
                     Image = pbox.Image,
